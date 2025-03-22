@@ -22,7 +22,9 @@ function App() {
     // Iniciar la conexión SSE con el servidor
     setIsLoading(true);
     const eventSource = new EventSource(
-      `http://127.0.0.1:5000/chat?message=${encodeURIComponent(userInput)}`
+      `https://nany-ai-backend.onrender.com/chat?message=${encodeURIComponent(
+        userInput
+      )}`
     );
 
     let botResponse = "";
