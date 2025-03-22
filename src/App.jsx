@@ -83,10 +83,10 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-indigo-950 py-4 to-gray-900 text-white flex flex-col">
       {/* Encabezado */}
       <header className="text-center py-6">
-        <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+        <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
           Nany AI
         </h1>
-        <p className="text-lg text-gray-300 mt-2">
+        <p className="text-sm md:text-lg text-gray-300 mt-2">
           I´m The Smartest Woman In The World
         </p>
       </header>
@@ -100,18 +100,18 @@ function App() {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-4 rounded-2xl max-w-[70%] transition-all duration-300 ${
+              className={`p-4 rounded-2xl max-w-[80%] sm:max-w-[70%] transition-all duration-300 ${
                 msg.role === "user"
                   ? "bg-blue-600 ml-auto animate-fade-in-right"
                   : "bg-gray-700 mr-auto animate-fade-in-left"
               }`}
             >
-              <p className="text-lg">{msg.content}</p>
+              <p className="text-sm sm:text-lg">{msg.content}</p>
             </div>
           ))}
           {isLoading && (
-            <div className="p-4 rounded-2xl bg-gray-700 mr-auto max-w-[70%] animate-pulse">
-              <p className="text-lg">Escribiendo...</p>
+            <div className="p-4 rounded-2xl bg-gray-700 mr-auto max-w-[80%] sm:max-w-[70%] animate-pulse">
+              <p className="text-sm sm:text-lg">Escribiendo...</p>
             </div>
           )}
         </div>
@@ -127,12 +127,12 @@ function App() {
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           placeholder="Escribe tu mensaje..."
-          className="flex-grow p-4 rounded-2xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-lg"
+          className="flex-grow p-3 sm:p-4 rounded-2xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 text-sm sm:text-lg"
           disabled={isLoading} // Deshabilitar el input mientras se carga
         />
         <button
           type="submit"
-          className={`p-4 rounded-2xl text-lg ${
+          className={`p-3 sm:p-4 rounded-2xl text-sm sm:text-lg ${
             isLoading
               ? "bg-gray-500 cursor-not-allowed"
               : "bg-gradient-to-r from-pink-500 to-purple-500 hover:opacity-90"
